@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact & Réservation | calm.fr</title>
+
+    <meta
+      name="description"
+      content="Contactez Amandine pour vos soins de relaxation à domicile et réservez un moment de bien-être via l'agenda intégré."
+    />
+    <meta name="author" content="Amandine" />
+
+    <link rel="icon" type="image/x-icon" href="assets/img/fav.ico" />
+    <link
+      href="https://db.onlinewebfonts.com/c/d02befc8fdd8e5315fb21fa7f38fd55a?family=Shree+Devanagari+714"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="flex" role="banner">
+      <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Ouvrir ou fermer le menu de navigation"
+        aria-controls="menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+          <line class="line top" x1="20" y1="30" x2="80" y2="30" />
+          <line class="line middle" x1="20" y1="50" x2="80" y2="50" />
+          <line class="line bottom" x1="20" y1="70" x2="80" y2="70" />
+        </svg>
+      </button>
+
+      <div class="header-block">
+        <a class="logo" href="index.html">
+          <img src="assets/img/logo.png" alt="Logo calm.fr" />
+        </a>
+        <div class="contact">
+          <div class="name">Amandine</div>
+          <div class="phone">
+            <a
+              href="tel:+33667557448"
+              aria-label="Appeler Amandine au 06 67 55 74 48"
+              >06 67 55 74 48</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="menu" class="flex" role="navigation" aria-label="Menu principal">
+      <ul class="flex">
+        <li><a href="presentation.html">Présentation</a></li>
+        <li><a href="ce-que-dit-la-science.html">Ce que dit la science</a></li>
+        <li><a href="prestations-et-tarifs.html">Prestations & Tarifs</a></li>
+        <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+        <li><a href="contact-et-reservation.html">Contact & Réservation</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
+      <h1>Contact</h1>
+      <div class="container">
+        <form action="mailto:ton@email.com" method="POST" enctype="text/plain">
+          <div class="flex field-container">
+            <div class="field-block">
+              <div class="form-line">
+                <label for="nom">Nom</label>
+                <input id="nom" name="nom" type="text" required />
+              </div>
+              <div class="form-line">
+                <label for="prenom">Prénom</label>
+                <input id="prenom" name="prenom" type="text" required />
+              </div>
+              <div class="form-line">
+                <label for="mail">Email</label>
+                <input id="mail" name="mail" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-line" style="width: 50%">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="8"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit">Envoyer</button>
+        </form>
+
+        <h2>Réservation</h2>
+        <div class="agenda">
+          <iframe
+            title="Agenda de réservation Calm"
+            src="https://calendar.google.com/calendar/embed?src=15dbb1f13d5d39cc68d0ff39778bde4cc8941876315f952edde6585a9444acdc%40group.calendar.google.com&ctz=Europe%2FParis"
+            style="border: 0"
+            width="100%"
+            height="700"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      <!-- Footer à compléter -->
+    </footer>
+
+    <script>
+      // navigation css menu
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentFile = window.location.pathname
+          .split("/")
+          .pop()
+          .toLowerCase();
+        const links = document.querySelectorAll("nav a[href]");
+
+        links.forEach(function (link) {
+          const href = link.getAttribute("href").toLowerCase();
+          if (href === currentFile) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // menu button animation toggle
+      function toggleMenu() {
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("menu");
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.classList.toggle("active");
+        menu.classList.toggle("active");
+        toggle.setAttribute("aria-expanded", !expanded);
+      }
+    </script>
+  </body>
+</html>

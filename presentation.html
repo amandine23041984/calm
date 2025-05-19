@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accueil | calm.fr</title>
+
+    <!-- SEO Tags -->
+    <meta
+      name="description"
+      content="Soins de relaxation personnalisés à domicile. Découvrez le Soft Touch pour une expérience de détente profonde du corps et de l'esprit."
+    />
+    <meta name="author" content="Amandine" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/fav.ico" />
+
+    <!-- Fonts and Styles -->
+    <link
+      href="https://db.onlinewebfonts.com/c/d02befc8fdd8e5315fb21fa7f38fd55a?family=Shree+Devanagari+714"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="flex" role="banner">
+      <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Ouvrir ou fermer le menu de navigation"
+        aria-controls="menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+          <line class="line top" x1="20" y1="30" x2="80" y2="30" />
+          <line class="line middle" x1="20" y1="50" x2="80" y2="50" />
+          <line class="line bottom" x1="20" y1="70" x2="80" y2="70" />
+        </svg>
+      </button>
+      <div class="header-block">
+        <a class="logo" href="index.html">
+          <img src="assets/img/logo.png" alt="Logo calm.fr" />
+        </a>
+        <div class="contact">
+          <div class="name">Amandine</div>
+          <div class="phone">
+            <a
+              href="tel:+33667557448"
+              aria-label="Appeler Amandine au 06 67 55 74 48"
+              >06 67 55 74 48</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="menu" class="flex" role="navigation" aria-label="Menu principal">
+      <ul class="flex">
+        <li><a href="presentation.html">Présentation</a></li>
+        <li><a href="ce-que-dit-la-science.html">Ce que dit la science</a></li>
+        <li><a href="prestations-et-tarifs.html">Prestations & Tarifs</a></li>
+        <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+        <li><a href="contact-et-reservation.html">Contact & Réservation</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
+      <h1>Offrez-vous une parenthèse de douceur…</h1>
+      <p>
+        Je vous propose des soins de relaxation personnalisés, réalisés à
+        domicile, dans un cadre bienveillant et apaisant. Ces instants de
+        bien-être sont centrés sur le toucher délicat de la peau, au travers de
+        gestes subtils, lents et enveloppants, propices à une détente profonde
+        du corps et de l’esprit.
+      </p>
+      <p>
+        Inspirée de la pratique américaine du Soft Touch, cette approche, que
+        l’on appelle familièrement « papouilles » dans la sphère intime, est
+        particulièrement adaptée aux personnes sensibles au toucher doux et
+        léger. Bien au-delà d’un simple massage, cette technique invite à un
+        véritable lâcher-prise sensoriel.
+      </p>
+      <p>
+        Chaque séance est entièrement sur mesure : vous choisissez les zones du
+        corps que vous souhaitez voir enveloppées de ces effleurements apaisants
+        — cuir chevelu, visage, bras, dos, jambes ou encore voûtes plantaires.
+        Du bout des doigts, je parcours votre peau selon vos envies, dans le
+        respect total de votre confort et de vos préférences.
+      </p>
+      <p>
+        Pour enrichir l’expérience sensorielle, différents outils peuvent être
+        intégrés au soin : plumes, pinceaux, baguettes pour le cuir chevelu,
+        autant de textures qui viennent éveiller en douceur votre perception
+        corporelle.
+      </p>
+    </main>
+
+    <footer role="contentinfo">
+      <!-- Footer à compléter -->
+    </footer>
+
+    <script>
+      // Marque le lien actif
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentFile = window.location.pathname
+          .split("/")
+          .pop()
+          .toLowerCase();
+        const links = document.querySelectorAll("nav a[href]");
+
+        links.forEach(function (link) {
+          const href = link.getAttribute("href").toLowerCase();
+          if (href === currentFile) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Menu toggle
+      function toggleMenu() {
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("menu");
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.classList.toggle("active");
+        menu.classList.toggle("active");
+        toggle.setAttribute("aria-expanded", !expanded);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+@import url(https://db.onlinewebfonts.com/c/d02befc8fdd8e5315fb21fa7f38fd55a?family=Shree+Devanagari+714);
+@import url(style-mobile.css);
+@font-face {
+  font-family: "shree";
+  src: url("https://db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.woff2")
+      format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "shree";
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+}
+
+header {
+  background-image: url("assets/img/header-background.jpg");
+  height: 300px;
+}
+
+.header-block {
+  margin: 0 auto;
+  width: 60%;
+}
+
+header a {
+  display: block;
+  width: 250px;
+}
+
+header a img {
+  width: 100%;
+}
+
+header .phone a {
+  color: #fff !important;
+}
+
+header .contact {
+  color: #fff;
+  padding-top: 30px;
+}
+
+nav {
+  height: 80px;
+  margin: 0 auto 40px;
+  width: 60%;
+}
+
+nav ul {
+  list-style-type: none;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+}
+
+nav ul a.active {
+  border-bottom: 1px solid #000;
+}
+
+main {
+  margin: 0 auto;
+  padding-bottom: 30px;
+  width: 60%;
+}
+
+form {
+  margin-bottom: 40px;
+}
+
+.field-container {
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+
+.field-block {
+  width: 50%;
+}
+
+.form-line {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  width: 150px;
+}
+
+input {
+  height: 35px;
+  width: 100%;
+}
+
+textarea {
+  height: 180px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+}
+
+iframe {
+  width: 100%;
+}

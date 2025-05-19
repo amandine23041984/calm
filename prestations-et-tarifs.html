@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prestations & Tarifs | calm.fr</title>
+
+    <meta
+      name="description"
+      content="Découvrez les soins de relaxation personnalisés proposés par Amandine, ainsi que les tarifs et zones d'intervention à domicile en Essonne et Yvelines."
+    />
+    <meta name="author" content="Amandine" />
+
+    <link rel="icon" type="image/x-icon" href="assets/img/fav.ico" />
+    <link
+      href="https://db.onlinewebfonts.com/c/d02befc8fdd8e5315fb21fa7f38fd55a?family=Shree+Devanagari+714"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="flex" role="banner">
+      <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Ouvrir ou fermer le menu de navigation"
+        aria-controls="menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+          <line class="line top" x1="20" y1="30" x2="80" y2="30" />
+          <line class="line middle" x1="20" y1="50" x2="80" y2="50" />
+          <line class="line bottom" x1="20" y1="70" x2="80" y2="70" />
+        </svg>
+      </button>
+      <div class="header-block">
+        <a class="logo" href="index.html">
+          <img src="assets/img/logo.png" alt="Logo calm.fr" />
+        </a>
+        <div class="contact">
+          <div class="name">Amandine</div>
+          <div class="phone">
+            <a
+              href="tel:+33667557448"
+              aria-label="Appeler Amandine au 06 67 55 74 48"
+              >06 67 55 74 48</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="menu" class="flex" role="navigation" aria-label="Menu principal">
+      <ul class="flex">
+        <li><a href="presentation.html">Présentation</a></li>
+        <li><a href="ce-que-dit-la-science.html">Ce que dit la science</a></li>
+        <li><a href="prestations-et-tarifs.html">Prestations & Tarifs</a></li>
+        <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+        <li><a href="contact-et-reservation.html">Contact & Réservation</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
+      <h1>Prestations & Tarifs</h1>
+      <p>
+        Soins de relaxation personnalisés à domicile. Ces instants de calme se
+        traduisent par des effleurements légers, qui privilégient la lenteur, la
+        fluidité et le respect des préférences de chaque personne.
+      </p>
+      <p>
+        Ce soin n’a ni visée médicale, ni connotation sensuelle ou sexuelle. Il
+        s’adresse aux femmes en quête d’un apaisement profond par le biais d’un
+        toucher subtil et non intrusif.
+      </p>
+
+      <ul>
+        <li>Cocon de 40 minutes : 40 euros</li>
+        <li>Cocon de 60 minutes : 55 euros</li>
+      </ul>
+
+      <h2>Lieux d’intervention</h2>
+      <p>
+        Gif-sur-Yvette, Villiers-le-Bâcle, Bures-sur-Yvette, Saclay, Orsay, Les
+        Ulis, Gometz-le-Châtel, Toussus-le-Noble, Châteaufort, Gometz-la-Ville,
+        Magny-les-Hameaux, Guyancourt, Montigny-le-Bretonneux,
+        Saint-Quentin-en-Yvelines. Un supplément pourra être appliqué au-delà,
+        contactez-moi.
+      </p>
+
+      <h2>Pour qui, quand, pourquoi ?</h2>
+      <p>Ces soins peuvent être particulièrement bénéfiques :</p>
+      <ul>
+        <li>
+          en période de stress, de surmenage ou d’hypersensibilité émotionnelle,
+          lorsque l’on ressent un manque de contact doux ou un besoin de
+          reconnexion au corps,
+        </li>
+        <li>
+          en soutien d’un travail thérapeutique ou d’un cheminement personnel,
+        </li>
+        <li>
+          ou simplement pour s’offrir un moment de présence à soi, hors des
+          sollicitations extérieures.
+        </li>
+      </ul>
+    </main>
+
+    <script>
+      // navigation css menu
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentFile = window.location.pathname
+          .split("/")
+          .pop()
+          .toLowerCase();
+        const links = document.querySelectorAll("nav a[href]");
+
+        links.forEach(function (link) {
+          const href = link.getAttribute("href").toLowerCase();
+          if (href === currentFile) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // menu button animation toggle
+      function toggleMenu() {
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("menu");
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.classList.toggle("active");
+        menu.classList.toggle("active");
+        toggle.setAttribute("aria-expanded", !expanded);
+      }
+    </script>
+  </body>
+</html>
