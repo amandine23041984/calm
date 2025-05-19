@@ -16,6 +16,10 @@
     margin: 0 22px !important;
   }
 
+  .menu-toggle {
+    display: block !important;
+  }
+
   nav {
     background-color: #fff;
     height: 100vh !important;

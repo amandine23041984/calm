@@ -58,6 +58,10 @@ header .contact {
   padding-top: 30px;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 nav {
   height: 80px;
   margin: 0 auto 40px;
